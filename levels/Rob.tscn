@@ -7,6 +7,6 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(2, -35)
+position = Vector2(0, -31)
 scale = Vector2(0.46875, 0.46875)
 texture = ExtResource("1_436n4")
