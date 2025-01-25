@@ -48,7 +48,6 @@ func _physics_process(delta: float) -> void:
 		# Air resistance
 		velocity.x *= 0.95
 		if direction != 0.0:
-			var acceleration = AIR_ACCEL if direction * velocity.x > 0.0 else 2 * AIR_ACCEL
 			velocity.x += direction * AIR_ACCEL
 		
 	
