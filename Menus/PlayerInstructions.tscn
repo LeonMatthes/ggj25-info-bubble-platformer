@@ -128,9 +128,8 @@ scale = Vector2(0.3, 0.3)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_font_sizes/font_size = 24
-text = "This game requires cooperation.
-You are [self]. Someone else needs to play as [other].
-Make sure you can communicate."
+text = "You are [self].
+Someone else needs to play as [other]."
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_s8x70")
@@ -139,7 +138,8 @@ script = ExtResource("1_s8x70")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_font_sizes/font_size = 32
-text = "Make sure you cannot see [other]'s screen!"
+text = "You cannot solve this game without talking to each other!
+Make sure you cannot see [other]'s screen!"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_s8x70")
@@ -148,7 +148,7 @@ script = ExtResource("1_s8x70")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_font_sizes/font_size = 24
-text = "Tell Bob to press \"C\" to continue."
+text = "Bob can start by pressing \"C\"."
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_hqu70")
