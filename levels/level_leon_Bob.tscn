@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=4 uid="uid://djeqkj0leg64h"]
+
+[ext_resource type="PackedScene" uid="uid://dcho31xtwsft5" path="res://levels/level_leon_base.tscn" id="1_t5gfo"]
+[ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="2_wkp77"]
+[ext_resource type="PackedScene" uid="uid://cxp0lxksb3ehw" path="res://entities/WateringCan.tscn" id="3_qmmfj"]
+[ext_resource type="Script" path="res://scripts/appear.gd" id="4_2si54"]
+
+[node name="LevelLeonBob" type="Node2D"]
+
+[node name="LevelLeonBase" parent="." instance=ExtResource("1_t5gfo")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAMAP7/CQARAAYAAAAMAP3/CQAQAAQAAAAMAPz/CQARAAQAAAALAPz/CQASAAIAAAALAPv/CQASAAEAAAAMAPv/CQASAAEAAAAKAPv/CQARAAAAAAAKAPz/CQARAAIAAAANAPv/CQATAAEAAAANAPz/CQATAAIAAAAMAPr/CQASAAAAAAANAPr/CQATAAAAAAAPAP//CQAFAAEAAAAPAP7/CQABAAYAAAAQAP7/CQACAAYAAAAQAP3/CQAEAAUAAAAQAPz/CQACAAYAAAARAPz/CQADAAYAAAARAPv/CQADAAYAAAARAP3/CQADAAYAAAARAP7/CQAEAAEAAAARAP//CQACAAYAAAAQAP//CQACAAYAAAASAP//CQAEAAEAAAASAP7/CQADAAEAAAAQAPv/CQAFAAEAAAAQAPr/CQABAAEAAAARAPr/CQADAAEAAAAPAP3/CQABAAYAAAAPAPz/CQABAAYAAAAPAPv/CQABAAEAAAALAPr/CQARAAAAAAAGAP3/CQAHAAQAAAA+APb/CQAHAAQAAAA4APP/CQAHAAQAAAA=")
+tile_set = ExtResource("2_wkp77")
+
+[node name="WateringCan" parent="." instance=ExtResource("3_qmmfj")]
+position = Vector2(1008, 54)
+
+[node name="Tree" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAwAAIACQARAAYAAAAwAAEACQAQAAUAAAAwAAAACQAQAAUAAAAwAP//CQARAAQAAAAvAP//CQASAAIAAAAuAP7/CQARAAAAAAAvAP7/CQASAAEAAAAvAP3/CQARAAAAAAAwAP3/CQASAAAAAAAxAP3/CQASAAAAAAAxAP7/CQASAAEAAAAwAP7/CQASAAEAAAAxAP//CQASAAIAAAAyAP7/CQATAAEAAAAyAP3/CQATAAAAAAAyAP//CQATAAIAAAAuAP//CQARAAIAAAA=")
+tile_set = ExtResource("2_wkp77")
+script = ExtResource("4_2si54")
+
+[node name="TileMapRotated" type="TileMapLayer" parent="."]
+rotation = 1.5708
+tile_map_data = PackedByteArray("AAD6/77/CQAHAAQAAAA=")
+tile_set = ExtResource("2_wkp77")
+
+[connection signal="lever_activated" from="WateringCan" to="Tree" method="appear"]

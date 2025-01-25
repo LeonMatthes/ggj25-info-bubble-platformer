@@ -26,5 +26,5 @@ text = "Use A and D to move left/right!"
 
 [node name="level_end_trigger" parent="." instance=ExtResource("3_2s7oj")]
 position = Vector2(1101, 9)
-next_level_alice = "res://levels/level_Olaf_Alice.tscn"
-next_level_bob = "res://levels/level_Olaf_Bob.tscn"
+next_level_alice = "res://levels/level_leon_Alice.tscn"
+next_level_bob = "res://levels/level_leon_Bob.tscn"
