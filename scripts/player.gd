@@ -10,7 +10,12 @@ var dash_cooldown = 0
 const DASH_DURATION = 0.3
 
 func _ready():
-	pass
+	if Globals.is_player_1:
+		$P1Sprite.visible = true
+		$P2Sprite.visible = false
+	else:
+		$P1Sprite.visible = false
+		$P2Sprite.visible = true
 	
 func _physics_process(delta: float) -> void:
 
