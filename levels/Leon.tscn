@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://j1lr5u4rn2ss"]
+[gd_scene load_steps=3 format=4 uid="uid://j1lr5u4rn2ss"]
 
-[ext_resource type="Texture2D" uid="uid://c1tk2r102jcw2" path="res://icon.svg" id="1_u4fkx"]
+[ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="2_52xuk"]
+[ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="2_57ute"]
 
 [node name="Leon" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(2, -35)
-scale = Vector2(0.46875, 0.46875)
-texture = ExtResource("1_u4fkx")
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/wAACQACAAAAAAD//wAACQACAAAAAAAAAAAACQACAAAAAAABAAAACQACAAAAAAACAAAACQACAAAAAAADAAAACQACAAAAAAAEAAAACQACAAAAAAAFAAAACQACAAAAAAAGAAAACQACAAAAAAAHAAAACQACAAAAAAAIAAAACQACAAAAAAAJAAAACQAFAAEAAAAKAAAACQACAAYAAAALAAAACQACAAYAAAAMAAAACQACAAYAAAD9/wAACQACAAAAAAAJAP//CQABAAEAAAAKAP7/CQABAAEAAAALAP3/CQABAAEAAAAKAP//CQAFAAEAAAALAP//CQACAAYAAAALAP7/CQAFAAEAAAAMAP7/CQACAAYAAAAMAP//CQACAAYAAAAFAP//CQARAAYAAAAFAP7/CQAQAAYAAAAFAP3/CQARAAQAAAAFAPz/CQASAAEAAAAEAP3/CQARAAIAAAAEAPz/CQARAAEAAAAEAPv/CQARAAAAAAAFAPv/CQASAAAAAAAGAPv/CQATAAAAAAAGAPz/CQATAAEAAAAGAP3/CQATAAIAAAD8/wAACQACAAAAAAD7/wAACQACAAAAAAD6/wAACQACAAAAAAD5/wAACQACAAAAAAD4/wAACQACAAAAAAD3/wAACQACAAAAAAD2/wAACQACAAAAAAD1/wAACQACAAAAAAD0/wAACQACAAAAAADz/wAACQACAAAAAADy/wAACQACAAAAAAA=")
+tile_set = ExtResource("2_52xuk")
+
+[node name="Player1" parent="." instance=ExtResource("2_57ute")]
+position = Vector2(30, -1)
