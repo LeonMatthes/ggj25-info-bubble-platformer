@@ -12,6 +12,7 @@ atlas = ExtResource("2_4s0uq")
 region = Rect2(98, 1, 20, 23)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sq5cn"]
+radius = 8.0
 height = 23.0
 
 [node name="Player1" type="CharacterBody2D"]
