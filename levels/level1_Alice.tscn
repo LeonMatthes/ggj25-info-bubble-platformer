@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsnc6rw2c6g1h" path="res://levels/level1_base.tscn" id="2_h07m0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbmpd"]
-size = Vector2(17, 28)
+size = Vector2(16.5, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad7y1"]
 size = Vector2(17, 28)
@@ -13,7 +13,7 @@ size = Vector2(17, 28)
 
 [node name="Player1View" type="Node" parent="."]
 
-[node name="Info Icon" type="RichTextLabel" parent="Player1View"]
+[node name="DashInfo" type="RichTextLabel" parent="Player1View"]
 offset_left = 668.0
 offset_top = -20.0
 offset_right = 691.0
@@ -30,20 +30,23 @@ text = "i"
 position = Vector2(641, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/DashText"]
-position = Vector2(29, 18)
+position = Vector2(29.75, 18)
 shape = SubResource("RectangleShape2D_nbmpd")
 
-[node name="DashText" type="RichTextLabel" parent="Player1View/DashText"]
-offset_left = -66.0
-offset_top = -9.0
-offset_right = 178.0
-offset_bottom = 29.0
+[node name="DashText2" type="Label" parent="Player1View/DashText"]
+anchors_preset = -1
+anchor_left = -0.0809859
+anchor_right = 0.0176056
+offset_left = -113.0
+offset_top = -19.0
+offset_right = 233.0
+offset_bottom = 30.0
 scale = Vector2(0.811709, 0.808988)
-theme_override_font_sizes/normal_font_size = 12
-text = "You can dash left/right in the air with Q/E!"
+text = "Players can dash in the air with Q/E!"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Info Icon2" type="RichTextLabel" parent="Player1View"]
+[node name="JumpInfo" type="RichTextLabel" parent="Player1View"]
 offset_left = 322.0
 offset_top = 83.0
 offset_right = 345.0
@@ -64,13 +67,13 @@ position = Vector2(29, 18)
 shape = SubResource("RectangleShape2D_ad7y1")
 
 [node name="JumpText" type="RichTextLabel" parent="Player1View/JumpText"]
-offset_left = -25.0
+offset_left = -27.0
 offset_top = -10.0
-offset_right = 219.0
+offset_right = 217.0
 offset_bottom = 28.0
 scale = Vector2(0.811709, 0.808988)
 theme_override_font_sizes/normal_font_size = 12
-text = "You can jump with W!"
+text = "Players can jump with W!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Level1Base" parent="." instance=ExtResource("2_h07m0")]

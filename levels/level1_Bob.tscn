@@ -14,14 +14,14 @@ size = Vector2(17, 28)
 
 [node name="P1StartText" type="RichTextLabel" parent="Player2View"]
 offset_left = 28.0
-offset_top = 47.0
+offset_top = 41.0
 offset_right = 629.0
-offset_bottom = 134.0
+offset_bottom = 128.0
 theme_override_font_sizes/bold_italics_font_size = 5
 theme_override_font_sizes/italics_font_size = 5
 theme_override_font_sizes/mono_font_size = 5
 theme_override_font_sizes/normal_font_size = 12
-text = "Tell Alice to press G!"
+text = "Alice can press G to start!"
 
 [node name="JumpInfo" type="RichTextLabel" parent="Player2View"]
 offset_left = 322.0
@@ -44,13 +44,13 @@ position = Vector2(29, 18)
 shape = SubResource("RectangleShape2D_7q75x")
 
 [node name="JumpText" type="RichTextLabel" parent="Player2View/JumpText"]
-offset_left = -25.0
+offset_left = -33.0
 offset_top = -10.0
-offset_right = 219.0
+offset_right = 211.0
 offset_bottom = 28.0
 scale = Vector2(0.811709, 0.808988)
 theme_override_font_sizes/normal_font_size = 12
-text = "You can jump with space!"
+text = "Players can jump with space!"
 
 [node name="EndInfo" type="RichTextLabel" parent="Player2View"]
 offset_left = 1001.0
