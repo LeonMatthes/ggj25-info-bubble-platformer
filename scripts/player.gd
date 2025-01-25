@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 125.0
+const ACCEL = 300.0
 const JUMP_VELOCITY = -200.0
 const AIR_ACCEL = 11.0
 const DASH_SPEED = 400
@@ -18,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("player_jump") and is_on_floor():
+	if Input.is_action_pressed("player_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
 	# Dashing
@@ -36,11 +37,13 @@ func _physics_process(delta: float) -> void:
 		# Friction
 		velocity.x *= 0.7
 		if direction != 0.0:
-			velocity.x = direction * maxf(SPEED, absf(velocity.x))
+			var target_speed = direction * maxf(SPEED, absf(velocity.x))
+			velocity.x = move_toward(velocity.x, target_speed, ACCEL)
 	else:
 		# Air resistance
 		velocity.x *= 0.95
 		if direction != 0.0:
+			var acceleration = AIR_ACCEL if direction * velocity.x > 0.0 else 2 * AIR_ACCEL
 			velocity.x += direction * AIR_ACCEL
 		
 	
