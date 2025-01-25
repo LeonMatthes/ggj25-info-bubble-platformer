@@ -32,5 +32,7 @@ mesh = SubResource("QuadMesh_swy80")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
 shape = SubResource("RectangleShape2D_w3lh6")
 
-[node name="Player1" parent="." instance=ExtResource("1_gymhp")]
+[node name="Player" parent="." instance=ExtResource("1_gymhp")]
 position = Vector2(157, 918)
+
+[node name="Player1View" type="Node" parent="."]
