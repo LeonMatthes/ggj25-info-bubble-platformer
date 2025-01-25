@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxukvgcdncp1i"]
+
+[ext_resource type="PackedScene" uid="uid://617jjuwobbrm" path="res://entities/visibility_trigger.tscn" id="1_e7nfg"]
+[ext_resource type="PackedScene" uid="uid://dsnc6rw2c6g1h" path="res://levels/level1_base.tscn" id="2_h07m0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbmpd"]
+size = Vector2(17, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad7y1"]
+size = Vector2(17, 28)
+
+[node name="Level1_1" type="Node2D"]
+
+[node name="Player1View" type="Node" parent="."]
+
+[node name="Info Icon" type="RichTextLabel" parent="Player1View"]
+offset_left = 668.0
+offset_top = -20.0
+offset_right = 691.0
+offset_bottom = 22.0
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 0
+bbcode_enabled = true
+text = "i"
+
+[node name="DashText" parent="Player1View" instance=ExtResource("1_e7nfg")]
+visible = false
+position = Vector2(642, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/DashText"]
+position = Vector2(29, 18)
+shape = SubResource("RectangleShape2D_nbmpd")
+
+[node name="DashText" type="RichTextLabel" parent="Player1View/DashText"]
+offset_left = -53.0
+offset_top = -9.0
+offset_right = 191.0
+offset_bottom = 29.0
+scale = Vector2(0.811709, 0.808988)
+theme_override_font_sizes/normal_font_size = 12
+text = "You can dash left/right with Q/E!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Info Icon2" type="RichTextLabel" parent="Player1View"]
+offset_left = 322.0
+offset_top = 83.0
+offset_right = 345.0
+offset_bottom = 125.0
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 0
+bbcode_enabled = true
+text = "i"
+
+[node name="JumpText" parent="Player1View" instance=ExtResource("1_e7nfg")]
+visible = false
+position = Vector2(296, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/JumpText"]
+position = Vector2(29, 18)
+shape = SubResource("RectangleShape2D_ad7y1")
+
+[node name="JumpText" type="RichTextLabel" parent="Player1View/JumpText"]
+offset_left = -25.0
+offset_top = -10.0
+offset_right = 219.0
+offset_bottom = 28.0
+scale = Vector2(0.811709, 0.808988)
+theme_override_font_sizes/normal_font_size = 12
+text = "You can jump with W!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Level1Base" parent="." instance=ExtResource("2_h07m0")]
+
+[connection signal="body_exited" from="Player1View/DashText" to="Player1View/DashText" method="_on_body_exited"]
+[connection signal="body_exited" from="Player1View/JumpText" to="Player1View/JumpText" method="_on_body_exited"]
