@@ -148,7 +148,7 @@ script = ExtResource("1_s8x70")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_font_sizes/font_size = 24
-text = "Tell Player 2 to press \"C\" to continue."
+text = "Tell Bob to press \"C\" to continue."
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_hqu70")
@@ -161,15 +161,15 @@ autoplay = "startup"
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = -199.0
-offset_top = -109.0
-offset_right = 114.0
-offset_bottom = -51.0
+offset_left = -130.0
+offset_top = -73.0
+offset_right = 127.0
+offset_bottom = -15.0
 scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
-text = "If you picked the wrong player:"
+text = "If you need to change characters:"
 
 [node name="Button" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
