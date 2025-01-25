@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxukvgcdncp1i"]
 
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="1_gymhp"]
+[ext_resource type="PackedScene" uid="uid://617jjuwobbrm" path="res://entities/visibility_trigger.tscn" id="2_wcxb3"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_swy80"]
 size = Vector2(1000, 30)
@@ -33,6 +34,37 @@ mesh = SubResource("QuadMesh_swy80")
 shape = SubResource("RectangleShape2D_w3lh6")
 
 [node name="Player" parent="." instance=ExtResource("1_gymhp")]
+z_index = 1
 position = Vector2(157, 918)
 
 [node name="Player1View" type="Node" parent="."]
+
+[node name="Info Icon" type="RichTextLabel" parent="Player1View"]
+offset_left = 952.0
+offset_top = 812.0
+offset_right = 1021.0
+offset_bottom = 965.0
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 110
+theme_override_font_sizes/bold_font_size = 0
+bbcode_enabled = true
+text = "i"
+
+[node name="VisibilityTrigger" parent="Player1View" instance=ExtResource("2_wcxb3")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/VisibilityTrigger"]
+position = Vector2(4.5, -23.5)
+shape = SubResource("RectangleShape2D_nbmpd")
+
+[node name="DashText" type="RichTextLabel" parent="Player1View/VisibilityTrigger"]
+offset_left = -351.0
+offset_top = -144.0
+offset_right = 512.0
+offset_bottom = 46.0
+theme_override_font_sizes/normal_font_size = 50
+text = "You can dash left/right with Q/E!"
+
+[connection signal="body_exited" from="Player1View/VisibilityTrigger" to="Player1View/VisibilityTrigger" method="_on_body_exited"]
