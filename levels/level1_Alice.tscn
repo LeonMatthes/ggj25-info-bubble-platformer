@@ -27,21 +27,20 @@ bbcode_enabled = true
 text = "i"
 
 [node name="DashText" parent="Player1View" instance=ExtResource("1_e7nfg")]
-visible = false
-position = Vector2(642, -23)
+position = Vector2(641, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/DashText"]
 position = Vector2(29, 18)
 shape = SubResource("RectangleShape2D_nbmpd")
 
 [node name="DashText" type="RichTextLabel" parent="Player1View/DashText"]
-offset_left = -53.0
+offset_left = -66.0
 offset_top = -9.0
-offset_right = 191.0
+offset_right = 178.0
 offset_bottom = 29.0
 scale = Vector2(0.811709, 0.808988)
 theme_override_font_sizes/normal_font_size = 12
-text = "You can dash left/right with Q/E!"
+text = "You can dash left/right in the air with Q/E!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Info Icon2" type="RichTextLabel" parent="Player1View"]
@@ -58,7 +57,6 @@ bbcode_enabled = true
 text = "i"
 
 [node name="JumpText" parent="Player1View" instance=ExtResource("1_e7nfg")]
-visible = false
 position = Vector2(296, 80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/JumpText"]
