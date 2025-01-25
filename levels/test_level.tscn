@@ -11,14 +11,65 @@ size = Vector2(1000, 30)
 [node name="testLevel" type="Node2D"]
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_3y6d0")]
+z_index = 1
 position = Vector2(763, 635)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(903, 813)
+[node name="Main Floor" type="StaticBody2D" parent="."]
+position = Vector2(1186, 754)
+scale = Vector2(1.48, 1)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Main Floor"]
 modulate = Color(0.220725, 0.139809, 0.0259767, 1)
 mesh = SubResource("QuadMesh_fo7f5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main Floor"]
 shape = SubResource("RectangleShape2D_hxl0j")
+
+[node name="Basement" type="StaticBody2D" parent="."]
+position = Vector2(960, 1076)
+scale = Vector2(1.96, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Basement"]
+modulate = Color(0.220725, 0.139809, 0.0259767, 1)
+mesh = SubResource("QuadMesh_fo7f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basement"]
+shape = SubResource("RectangleShape2D_hxl0j")
+
+[node name="RightLedge" type="StaticBody2D" parent="."]
+position = Vector2(1626, 628)
+scale = Vector2(0.600002, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RightLedge"]
+modulate = Color(0.220725, 0.139809, 0.0259767, 1)
+mesh = SubResource("QuadMesh_fo7f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLedge"]
+shape = SubResource("RectangleShape2D_hxl0j")
+one_way_collision = true
+
+[node name="stairs" type="Node2D" parent="."]
+
+[node name="Platform4" type="StaticBody2D" parent="stairs"]
+position = Vector2(387, 875)
+scale = Vector2(0.120002, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="stairs/Platform4"]
+modulate = Color(0.220725, 0.139809, 0.0259767, 1)
+mesh = SubResource("QuadMesh_fo7f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stairs/Platform4"]
+shape = SubResource("RectangleShape2D_hxl0j")
+one_way_collision = true
+
+[node name="Platform5" type="StaticBody2D" parent="stairs"]
+position = Vector2(212, 958)
+scale = Vector2(0.120002, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="stairs/Platform5"]
+modulate = Color(0.220725, 0.139809, 0.0259767, 1)
+mesh = SubResource("QuadMesh_fo7f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stairs/Platform5"]
+shape = SubResource("RectangleShape2D_hxl0j")
+one_way_collision = true
