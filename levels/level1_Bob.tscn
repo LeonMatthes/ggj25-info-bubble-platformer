@@ -21,7 +21,7 @@ theme_override_font_sizes/bold_italics_font_size = 5
 theme_override_font_sizes/italics_font_size = 5
 theme_override_font_sizes/mono_font_size = 5
 theme_override_font_sizes/normal_font_size = 12
-text = "Tell player 1 to press G!"
+text = "Tell Alice 1 to press G!"
 
 [node name="JumpInfo" type="RichTextLabel" parent="Player2View"]
 offset_left = 322.0
