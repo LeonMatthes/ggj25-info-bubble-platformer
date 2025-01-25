@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://dsnc6rw2c6g1h"]
+[gd_scene load_steps=4 format=4 uid="uid://dsnc6rw2c6g1h"]
 
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="1_12buo"]
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="2_qamax"]
+[ext_resource type="PackedScene" uid="uid://cbore88oru4et" path="res://entities/level_end_trigger.tscn" id="3_2s7oj"]
 
 [node name="Level1Base" type="Node2D"]
 
@@ -22,3 +23,6 @@ theme_override_font_sizes/italics_font_size = 5
 theme_override_font_sizes/mono_font_size = 5
 theme_override_font_sizes/normal_font_size = 12
 text = "Use A and D to move left/right!"
+
+[node name="level_end_trigger" parent="." instance=ExtResource("3_2s7oj")]
+position = Vector2(1101, 9)
