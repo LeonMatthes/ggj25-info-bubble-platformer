@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbore88oru4et"]
+
+[ext_resource type="Script" path="res://level_end_trigger.gd" id="1_48g3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2y68"]
+size = Vector2(32, 30)
+
+[node name="level_end_trigger" type="Area2D"]
+scale = Vector2(1.4, 1.48)
+script = ExtResource("1_48g3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n2y68")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
