@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://dcho31xtwsft5"]
+[gd_scene load_steps=6 format=4 uid="uid://dcho31xtwsft5"]
 
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="1_iqidm"]
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="2_unn2c"]
 [ext_resource type="PackedScene" uid="uid://clopm85dp5m68" path="res://entities/Lever.tscn" id="3_351iu"]
+[ext_resource type="PackedScene" uid="uid://cbore88oru4et" path="res://entities/level_end_trigger.tscn" id="4_pm8ie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c10j2"]
 size = Vector2(20, 117)
@@ -33,5 +34,10 @@ position = Vector2(513, -36)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GlassHouseDoor/StaticBody2D"]
 position = Vector2(0, -31.5)
 shape = SubResource("RectangleShape2D_c10j2")
+
+[node name="level_end_trigger" parent="." instance=ExtResource("4_pm8ie")]
+position = Vector2(855, -216)
+next_level_alice = "res://levels/level_Olaf_Alice.tscn"
+next_level_bob = "res://levels/level_Olaf_Bob.tscn"
 
 [connection signal="lever_activated" from="Lever" to="GlassHouseDoor" method="queue_free"]
