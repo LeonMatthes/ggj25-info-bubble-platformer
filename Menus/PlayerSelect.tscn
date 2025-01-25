@@ -8,10 +8,10 @@ script = ExtResource("1_cp0iy")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = -500.0
-offset_top = -250.0
-offset_right = 500.0
-offset_bottom = 250.0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
 
 [node name="Player1" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2

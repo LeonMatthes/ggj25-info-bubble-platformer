@@ -118,10 +118,11 @@ _data = {
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
-offset_left = -500.0
-offset_top = -250.0
-offset_right = 500.0
-offset_bottom = 250.0
+offset_left = -150.0
+offset_top = -41.0
+offset_right = 850.0
+offset_bottom = 459.0
+scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
@@ -160,10 +161,11 @@ autoplay = "startup"
 
 [node name="HBoxContainer2" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = -878.0
-offset_top = -476.0
-offset_right = -565.0
-offset_bottom = -418.0
+offset_left = -199.0
+offset_top = -109.0
+offset_right = 114.0
+offset_bottom = -51.0
+scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
