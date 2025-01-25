@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dicb4yvushux8"]
+
+[ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="1_ivlr3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_swy80"]
+size = Vector2(1000, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3lh6"]
+size = Vector2(1000, 30)
+
+[node name="Level1Base" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(496, 1054)
+scale = Vector2(0.999999, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Floor"]
+modulate = Color(0.220725, 0.139809, 0.0259767, 1)
+mesh = SubResource("QuadMesh_swy80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_w3lh6")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(1701, 1056)
+scale = Vector2(0.44, 1)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Floor2"]
+modulate = Color(0.220725, 0.139809, 0.0259767, 1)
+mesh = SubResource("QuadMesh_swy80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+shape = SubResource("RectangleShape2D_w3lh6")
+
+[node name="Player" parent="." instance=ExtResource("1_ivlr3")]
+position = Vector2(157, 918)
+
+[node name="Player2View" type="Node" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player2View"]
+offset_left = 242.0
+offset_top = 637.0
+offset_right = 843.0
+offset_bottom = 724.0
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 50
+text = "Tell player 1 to press G!"
