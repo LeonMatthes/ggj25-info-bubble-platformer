@@ -3,7 +3,7 @@ extends Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if !Globals.is_player_1:
-		self.text = "Wait for instructions from Player 1!"
+		self.text = "Wait for instructions from Alice!"
 
 static var player_1_level = preload("res://levels/level1_Alice.tscn")
 static var player_2_level = preload("res://levels/level1_Bob.tscn")
