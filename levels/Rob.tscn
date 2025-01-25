@@ -1,12 +1,5 @@
-[gd_scene load_steps=2 format=3 uid="uid://mjef658qr4yu"]
-
-[ext_resource type="Texture2D" uid="uid://c1tk2r102jcw2" path="res://icon.svg" id="1_436n4"]
+[gd_scene format=3 uid="uid://mjef658qr4yu"]
 
 [node name="Rob" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(0, -31)
-scale = Vector2(0.46875, 0.46875)
-texture = ExtResource("1_436n4")
