@@ -6,8 +6,7 @@ const JUMP_VELOCITY = -200.0
 const AIR_ACCEL = 11.0
 const DASH_SPEED = 400
 
-var dash_cooldown = 0
-const DASH_DURATION = 0.3
+var has_dashed = false
 
 func _ready():
 	if Globals.is_player_1:
@@ -28,13 +27,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	
 	# Dashing
-	if dash_cooldown > 0:
-		dash_cooldown -= delta
+	if is_on_floor():
+		has_dashed = false
 	var dash_direction = Input.get_axis("player_dash_left", "player_dash_right")
-	if !is_on_floor() && dash_cooldown <= 0 && dash_direction != 0:
+	if !is_on_floor() && !has_dashed && dash_direction != 0:
 		var dash_force = DASH_SPEED * dash_direction
 		velocity.x += dash_force
-		dash_cooldown = DASH_DURATION
+		has_dashed = true
 
 	# Left/Right Movement
 	var direction := Input.get_axis("player_left", "player_right")
