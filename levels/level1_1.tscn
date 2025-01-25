@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxukvgcdncp1i"]
 
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="1_gymhp"]
-[ext_resource type="Script" path="res://levels/dash_text.gd" id="2_1vcf1"]
+[ext_resource type="PackedScene" uid="uid://617jjuwobbrm" path="res://entities/visibility_trigger.tscn" id="2_wcxb3"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_swy80"]
 size = Vector2(1000, 30)
@@ -37,6 +37,7 @@ mesh = SubResource("QuadMesh_swy80")
 shape = SubResource("RectangleShape2D_w3lh6")
 
 [node name="Player" parent="." instance=ExtResource("1_gymhp")]
+z_index = 1
 position = Vector2(157, 918)
 
 [node name="Player1View" type="Node" parent="."]
@@ -54,21 +55,19 @@ theme_override_font_sizes/bold_font_size = 0
 bbcode_enabled = true
 text = "i"
 
-[node name="DashText" type="RichTextLabel" parent="Player1View"]
+[node name="VisibilityTrigger" parent="Player1View" instance=ExtResource("2_wcxb3")]
 visible = false
-offset_left = 602.0
-offset_top = 768.0
-offset_right = 1465.0
-offset_bottom = 958.0
-theme_override_font_sizes/normal_font_size = 50
-text = "You can dash left/right with Q/E!"
-script = ExtResource("2_1vcf1")
 
-[node name="Area2D" type="Area2D" parent="Player1View/DashText"]
-position = Vector2(351, 144)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/DashText/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1View/VisibilityTrigger"]
 position = Vector2(4.5, -23.5)
 shape = SubResource("RectangleShape2D_nbmpd")
 
-[connection signal="body_entered" from="Player1View/DashText/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[node name="DashText" type="RichTextLabel" parent="Player1View/VisibilityTrigger"]
+offset_left = -351.0
+offset_top = -144.0
+offset_right = 512.0
+offset_bottom = 46.0
+theme_override_font_sizes/normal_font_size = 50
+text = "You can dash left/right with Q/E!"
+
+[connection signal="body_exited" from="Player1View/VisibilityTrigger" to="Player1View/VisibilityTrigger" method="_on_body_exited"]
