@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://j1lr5u4rn2ss"]
+[gd_scene load_steps=2 format=3 uid="uid://j1lr5u4rn2ss"]
 
 [ext_resource type="Texture2D" uid="uid://c1tk2r102jcw2" path="res://icon.svg" id="1_u4fkx"]
-[ext_resource type="PackedScene" uid="uid://bvemdvd26ptkp" path="res://Menus/PlayerSelect.tscn" id="2_6p444"]
 
 [node name="Leon" type="Node2D"]
 
@@ -11,5 +10,3 @@
 position = Vector2(2, -35)
 scale = Vector2(0.46875, 0.46875)
 texture = ExtResource("1_u4fkx")
-
-[node name="PlayerSelect" parent="." instance=ExtResource("2_6p444")]
