@@ -20,3 +20,7 @@ texture = SubResource("AtlasTexture_rh0hd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11.5)
 shape = SubResource("CapsuleShape2D_sq5cn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -31)
+position_smoothing_enabled = true
