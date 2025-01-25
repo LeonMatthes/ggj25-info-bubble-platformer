@@ -24,7 +24,7 @@ tile_set = ExtResource("3_blluv")
 [node name="Player1" parent="." instance=ExtResource("4_giia7")]
 position = Vector2(173, -65)
 
-[node name="Camera2D" type="Camera2D" parent="Player1"]
+[node name="Camera2D2" type="Camera2D" parent="Player1"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_l55pm")

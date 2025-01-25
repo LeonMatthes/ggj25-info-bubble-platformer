@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://5dyclu72tu02"]
+
+[ext_resource type="PackedScene" uid="uid://617jjuwobbrm" path="res://entities/visibility_trigger.tscn" id="1_jn70o"]
+[ext_resource type="PackedScene" uid="uid://bwcju6r4efgur" path="res://levels/level_Olaf_base.tscn" id="2_k282b"]
+[ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="3_m0lxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkcy4"]
+size = Vector2(17, 28)
+
+[node name="Level_Olaf_Alice" type="Node2D"]
+
+[node name="Info Icon" type="RichTextLabel" parent="."]
+offset_left = 1515.0
+offset_top = -835.0
+offset_right = 1538.0
+offset_bottom = -793.0
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 0
+bbcode_enabled = true
+text = "i"
+
+[node name="DashText" parent="." instance=ExtResource("1_jn70o")]
+position = Vector2(1406, -585)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DashText"]
+position = Vector2(36, -209)
+shape = SubResource("RectangleShape2D_gkcy4")
+
+[node name="DashText" type="RichTextLabel" parent="DashText"]
+offset_left = -59.0
+offset_top = -249.0
+offset_right = 185.0
+offset_bottom = -211.0
+scale = Vector2(0.811709, 0.808988)
+theme_override_font_sizes/normal_font_size = 12
+text = "You can dash left/right in the air with Q/E!"
+
+[node name="Level_Olaf_Base" parent="." instance=ExtResource("2_k282b")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAbAAUACQATAAIAAAAbAAQACQATAAAAAAAaAAUACQASAAIAAAAaAAQACQASAAAAAAAZAAUACQARAAIAAAAZAAQACQARAAAAAAAVAAYACQATAAMAAAAUAAYACQARAAMAAAAdAAMACQATAAMAAAAcAAMACQARAAMAAAAwAPv/CQATAAIAAAAwAPr/CQATAAEAAAAwAPn/CQATAAAAAAAvAPv/CQASAAIAAAAvAPr/CQASAAEAAAAvAPn/CQASAAAAAAAuAPv/CQARAAIAAAAuAPr/CQARAAEAAAAuAPn/CQARAAAAAAAzAPr/CQATAAIAAAAzAPn/CQATAAAAAAAyAPr/CQARAAIAAAAyAPn/CQARAAAAAAA3APz/CQATAAIAAAA3APv/CQATAAEAAAA3APr/CQATAAEAAAA3APn/CQATAAEAAAA3APj/CQATAAAAAAA2APz/CQASAAIAAAA2APv/CQASAAEAAAA2APr/CQASAAEAAAA2APn/CQASAAEAAAA2APj/CQASAAAAAAA1APz/CQARAAIAAAA1APv/CQARAAEAAAA1APr/CQARAAEAAAA1APn/CQARAAEAAAA1APj/CQARAAAAAAAnAP7/CQATAAMAAAAmAP7/CQASAAMAAAAlAP7/CQASAAMAAAAkAP//CQAQAAMAAAAkAP7/CQARAAAAAABOAOP/CQAIAAQAAAArAPb/CQASAAIAAAArAPX/CQASAAEAAAAqAPb/CQARAAIAAAAqAPX/CQARAAEAAAAtAPb/CQASAAEAAAAtAPX/CQASAAEAAAAsAPb/CQASAAEAAAAsAPX/CQASAAEAAAA6APX/CQATAAAAAAA5APX/CQASAAAAAAA4APX/CQARAAAAAAA6APb/CQATAAIAAAA5APb/CQARAAQAAAA4APb/CQARAAIAAAA5AP//CQAQAAUAAAA5AP7/CQAQAAUAAAA5AP3/CQAQAAUAAAA5APz/CQAQAAUAAAA5APv/CQAQAAQAAAA5APr/CQAQAAQAAAA5APn/CQAQAAUAAAA5APj/CQAQAAUAAAA5APf/CQAQAAUAAAA5AAIACQARAAYAAAA5AAEACQAQAAQAAAA5AAAACQAQAAQAAAAtAPT/CQASAAEAAAAtAPP/CQASAAEAAAAsAPT/CQASAAEAAAAsAPP/CQASAAEAAAArAPT/CQASAAEAAAArAPP/CQASAAEAAAAqAPT/CQARAAEAAAAqAPP/CQARAAAAAAAuAPb/CQATAAIAAAAuAPX/CQATAAEAAAAuAPT/CQATAAEAAAAuAPP/CQATAAAAAAAtAPL/CQATAAAAAAAsAPL/CQASAAAAAAArAPL/CQARAAAAAAAtAPf/CQATAAIAAAAsAPf/CQARAAIAAAA=")
+tile_set = ExtResource("3_m0lxw")
+
+[connection signal="body_exited" from="DashText" to="DashText" method="_on_body_exited"]
