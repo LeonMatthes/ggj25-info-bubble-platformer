@@ -11,6 +11,3 @@ tile_set = ExtResource("2_52xuk")
 
 [node name="Player1" parent="." instance=ExtResource("2_57ute")]
 position = Vector2(30, -1)
-
-[node name="Camera2D" type="Camera2D" parent="Player1"]
-position_smoothing_enabled = true

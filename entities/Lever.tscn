@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://clopm85dp5m68"]
+
+[ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="1_0rqa4"]
+[ext_resource type="Script" path="res://entities/lever.gd" id="1_r7a7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6bbk"]
+size = Vector2(52, 46)
+
+[node name="Lever" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_r7a7e")
+
+[node name="Lever_deactivated" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 9, 0, 6, 0, 3, 0, 0, 0)
+tile_set = ExtResource("1_0rqa4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -21)
+shape = SubResource("RectangleShape2D_b6bbk")
+
+[node name="Lever_activated" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 9, 0, 4, 0, 3, 0, 0, 0)
+tile_set = ExtResource("1_0rqa4")
