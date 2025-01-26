@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0ktgf1obrv"]
 
 [ext_resource type="Script" path="res://scripts/player_select_v2.gd" id="1_3tgrw"]
-[ext_resource type="PackedScene" uid="uid://cmbn52pygl5ko" path="res://entities/ambiance_background.tscn" id="2_pbo2u"]
+[ext_resource type="PackedScene" path="res://entities/ambiance_background.tscn" id="2_pbo2u"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g20j6"]
 load_path = "res://.godot/imported/tilemap-characters_packed.png-a9a3a003c4b44772ec682291ddd74226.ctex"

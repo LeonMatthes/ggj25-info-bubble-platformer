@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://cyvd4yrfdx2jo"]
 
-[ext_resource type="PackedScene" uid="uid://cmbn52pygl5ko" path="res://entities/ambiance_background.tscn" id="1_mrvtg"]
+[ext_resource type="PackedScene" path="res://entities/ambiance_background.tscn" id="1_mrvtg"]
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="1_v14el"]
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="2_aehre"]
 [ext_resource type="PackedScene" path="res://entities/level_end_trigger.tscn" id="3_2s2or"]
@@ -46,12 +46,12 @@ metadata/_edit_use_anchors_ = true
 [node name="level_end_trigger" parent="." instance=ExtResource("3_2s2or")]
 position = Vector2(446, 25)
 next_level_alice = "res://levels/levels_v2/level_v2_start_Alice.tscn"
-next_level_bob = "res://levels/leves_v2/level_v2_start_Bob.tscn"
+next_level_bob = "res://levels/levels_v2/level_v2_start_Bob.tscn"
 
 [node name="level_end_trigger2" parent="." instance=ExtResource("3_2s2or")]
 position = Vector2(-513, -5)
-next_level_alice = "res://levels/level_leon.tscn"
-next_level_bob = "res://levels/level_leon.tscn"
+next_level_alice = "res://levels/level_leon_Alice.tscn"
+next_level_bob = "res://levels/level_leon_Bob.tscn"
 
 [node name="WateringCan" parent="." instance=ExtResource("4_b1e08")]
 position = Vector2(-140, 144)
