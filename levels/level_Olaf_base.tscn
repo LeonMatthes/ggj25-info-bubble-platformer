@@ -9,7 +9,7 @@
 [node name="level_end_trigger" parent="." instance=ExtResource("3_tjvbf")]
 position = Vector2(1301, 33)
 next_level_alice = "res://Menus/GameOver.tscn"
-next_level_bob = "res://lMenus/GameOver.tscn"
+next_level_bob = "res://Menus/GameOver.tscn"
 
 [node name="Player" parent="." instance=ExtResource("1_o2j36")]
 position = Vector2(88, 124)
