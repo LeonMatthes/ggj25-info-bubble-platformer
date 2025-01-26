@@ -11,16 +11,29 @@ tile_set = ExtResource("1_lae17")
 
 [node name="ExitPipeText" type="RichTextLabel" parent="."]
 modulate = Color(0, 0, 0, 1)
-offset_left = 1102.0
-offset_top = -2.0
-offset_right = 1364.0
-offset_bottom = 67.0
+offset_left = 1090.0
+offset_top = -10.0
+offset_right = 1352.0
+offset_bottom = 59.0
 theme_override_font_sizes/bold_italics_font_size = 5
 theme_override_font_sizes/italics_font_size = 5
 theme_override_font_sizes/mono_font_size = 5
 theme_override_font_sizes/normal_font_size = 12
 text = "As everbody knows, you 
-enter pipes with G"
+enter pipes with RETURN"
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelV2StartBase" parent="." instance=ExtResource("2_v47xk")]
+
+[node name="JumpAliceText" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 278.0
+offset_top = 66.0
+offset_right = 540.0
+offset_bottom = 135.0
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 12
+text = "Jump with W"
+metadata/_edit_use_anchors_ = true
