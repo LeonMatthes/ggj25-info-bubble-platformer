@@ -5,8 +5,8 @@
 
 [node name="Level_Olaf_Alice" type="Node2D"]
 
-[node name="Level_Olaf_Base" parent="." instance=ExtResource("2_tdaf6")]
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAsAOT/CQAIAAQAAABmANf/CQAHAAQAAABEAOf/CQAHAAQAAGA4AOf/CQAIAAQAAABSAOL/CQAHAAQAAABLAOv/CQAHAAQAAABEAPb/CQAIAAQAAAARAPP/CQAIAAQAAABCANn/CQAHAAQAAGA=")
 tile_set = ExtResource("3_5hur2")
+
+[node name="Level_Olaf_Base" parent="." instance=ExtResource("2_tdaf6")]
