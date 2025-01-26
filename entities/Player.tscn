@@ -1,7 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://csej6qd7uugvb"]
+[gd_scene load_steps=14 format=3 uid="uid://csej6qd7uugvb"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_87x56"]
 [ext_resource type="Texture2D" uid="uid://dr113j7oipnta" path="res://tiles asset packs/kenney_pixel-platformer/Tilemap/tilemap-characters_packed.png" id="2_4s0uq"]
+[ext_resource type="Texture2D" uid="uid://2r2iiil0chb8" path="res://tiles asset packs/kenney_pixel-platformer/Tilemap/tilemap.png" id="3_t1tb0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qym35"]
+atlas = ExtResource("3_t1tb0")
+region = Rect2(304, 133, 18, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rh0hd"]
 atlas = ExtResource("2_4s0uq")
@@ -126,9 +131,13 @@ tracks/1/keys = {
 "values": [Rect2(122, 0, 20, 24)]
 }
 
+[sub_resource type="Animation" id="Animation_a5akd"]
+resource_name = "dash"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fpjn4"]
 _data = {
 "RESET": SubResource("Animation_n2iye"),
+"dash": SubResource("Animation_a5akd"),
 "jump": SubResource("Animation_7skyn"),
 "stand": SubResource("Animation_ukkqi"),
 "walk": SubResource("Animation_kr0v7")
@@ -138,6 +147,30 @@ _data = {
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_87x56")
+
+[node name="Dash" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Dash"]
+modulate = Color(1, 1, 1, 0.698039)
+position = Vector2(9, -12)
+rotation = -1.57079
+scale = Vector2(1.09607, 0.73193)
+texture = SubResource("AtlasTexture_qym35")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Dash"]
+modulate = Color(1, 1, 1, 0.698039)
+position = Vector2(30, -12)
+rotation = -1.57079
+scale = Vector2(0.734812, 0.539082)
+texture = SubResource("AtlasTexture_qym35")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Dash"]
+modulate = Color(1, 1, 1, 0.698039)
+position = Vector2(36, -12)
+rotation = -1.57079
+scale = Vector2(0.369423, 0.416198)
+texture = SubResource("AtlasTexture_qym35")
 
 [node name="P1Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -12)

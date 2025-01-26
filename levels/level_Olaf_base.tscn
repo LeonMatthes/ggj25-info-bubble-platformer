@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="1_o2j36"]
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="2_3cqed"]
-[ext_resource type="PackedScene" path="res://entities/level_end_trigger.tscn" id="3_tjvbf"]
+[ext_resource type="PackedScene" uid="uid://cbore88oru4et" path="res://entities/level_end_trigger.tscn" id="3_tjvbf"]
 
 [node name="Level_Olaf_Base" type="Node2D"]
 
 [node name="level_end_trigger" parent="." instance=ExtResource("3_tjvbf")]
 position = Vector2(1301, 33)
-next_level_alice = "res://Menus/PlayerSelect.tscn"
-next_level_bob = "res://lMenus/PlayerSelect.tscn"
+next_level_alice = "res://Menus/GameOver.tscn"
+next_level_bob = "res://lMenus/GameOver.tscn"
 
 [node name="Player" parent="." instance=ExtResource("1_o2j36")]
 position = Vector2(88, 124)

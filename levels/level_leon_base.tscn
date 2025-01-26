@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_c10j2")
 
 [node name="level_end_trigger" parent="." instance=ExtResource("4_pm8ie")]
 position = Vector2(711, -288)
-next_level_alice = "res://levels/level_Olaf_Alice.tscn"
-next_level_bob = "res://levels/level_Olaf_Bob.tscn"
+next_level_alice = "res://levels/level_Rob_Alice.tscn"
+next_level_bob = "res://levels/level_Rob_Bob.tscn"
 
 [connection signal="lever_activated" from="Lever" to="GlassHouseDoor" method="queue_free"]
