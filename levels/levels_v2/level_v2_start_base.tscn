@@ -42,7 +42,7 @@ position = Vector2(88, 124)
 
 [node name="level_end_trigger" parent="." instance=ExtResource("3_pdgro")]
 position = Vector2(1182, 33)
-next_level_alice = "res://levels/levels_vs/level_v2_Pipe.tscn"
-next_level_bob = "res://levels/levels_vs/level_v2_Flag"
+next_level_alice = "res://levels/levels_v2/level_v2_Pipe.tscn"
+next_level_bob = "res://levels/levels_v2/level_v2_Flag"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_sguy0")]
