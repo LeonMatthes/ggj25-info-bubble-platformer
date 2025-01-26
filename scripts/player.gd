@@ -51,3 +51,17 @@ func _physics_process(delta: float) -> void:
 		
 	
 	move_and_slide()
+	
+	if !is_on_floor():
+		$AnimationPlayer.play("jump")
+	else:
+		if absf(velocity.x) >= 5:
+			$AnimationPlayer.play("walk")
+		else:
+			$AnimationPlayer.play("stand")
+	if velocity.x < -10:
+		$P1Sprite.scale.x = 1
+		$P2Sprite.scale.x = 1
+	if velocity.x > 10:
+		$P1Sprite.scale.x = -1
+		$P2Sprite.scale.x = -1

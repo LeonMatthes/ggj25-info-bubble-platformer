@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfgm2jakx171k"]
+[gd_scene load_steps=7 format=3 uid="uid://bfgm2jakx171k"]
 
 [ext_resource type="Script" path="res://scripts/hello_label.gd" id="1_s8x70"]
 [ext_resource type="Script" path="res://scripts/coop_check.gd" id="2_hqu70"]
+[ext_resource type="PackedScene" uid="uid://cmbn52pygl5ko" path="res://entities/ambiance_background.tscn" id="3_q0pyp"]
 
 [sub_resource type="Animation" id="Animation_avdfs"]
 length = 0.001
@@ -68,7 +69,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7326),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -80,7 +81,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(5.7342, 6.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -92,7 +93,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(8.50097, 9.46667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -118,10 +119,10 @@ _data = {
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
-offset_left = -150.0
-offset_top = -41.0
-offset_right = 850.0
-offset_bottom = 459.0
+offset_left = -147.0
+offset_top = 3.0
+offset_right = 853.0
+offset_bottom = 503.0
 scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="HBoxContainer"]
@@ -168,11 +169,17 @@ offset_bottom = -15.0
 scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="HBoxContainer2"]
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 text = "If you need to change characters:"
 
 [node name="Button" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
 text = "Go back"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_q0pyp")]
+offset = Vector2(614.285, 20.235)
+transform = Transform2D(1, 0, 0, 1, 614.285, 20.235)
+scroll_base_scale = Vector2(1, 1)
 
 [connection signal="pressed" from="HBoxContainer2/Button" to="HBoxContainer/Label3" method="_go_back_pressed"]
