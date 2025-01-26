@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0ktgf1obrv"]
+
+[ext_resource type="Script" path="res://scripts/player_select_v2.gd" id="1_3tgrw"]
+[ext_resource type="PackedScene" path="res://entities/ambiance_background.tscn" id="2_pbo2u"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g20j6"]
+load_path = "res://.godot/imported/tilemap-characters_packed.png-a9a3a003c4b44772ec682291ddd74226.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efota"]
+atlas = SubResource("CompressedTexture2D_g20j6")
+region = Rect2(1, 0, 22, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro3ow"]
+atlas = SubResource("CompressedTexture2D_g20j6")
+region = Rect2(97, 0, 21, 25)
+
+[node name="PlayerSelect" type="Node2D"]
+script = ExtResource("1_3tgrw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -100.0
+offset_top = -49.0
+offset_right = 100.0
+offset_bottom = 51.0
+
+[node name="Player1" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="TextureRect" parent="HBoxContainer/Player1"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_efota")
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="HBoxContainer/Player1"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play as
+Alice"
+
+[node name="Player2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="TextureRect" parent="HBoxContainer/Player2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_ro3ow")
+stretch_mode = 5
+
+[node name="Button2" type="Button" parent="HBoxContainer/Player2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play as
+Bob"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_pbo2u")]
+offset = Vector2(614.285, 20.235)
+transform = Transform2D(1, 0, 0, 1, 614.285, 20.235)
+scroll_base_scale = Vector2(1, 1)
+
+[connection signal="pressed" from="HBoxContainer/Player1/Button" to="." method="_on_player_1_selected"]
+[connection signal="pressed" from="HBoxContainer/Player2/Button2" to="." method="_on_player_2_selected"]
