@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://hbt2jb5fyfqp"]
+[gd_scene load_steps=8 format=4 uid="uid://hbt2jb5fyfqp"]
 
 [ext_resource type="PackedScene" uid="uid://617jjuwobbrm" path="res://entities/visibility_trigger.tscn" id="1_7bbhv"]
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="1_eeagu"]
+[ext_resource type="PackedScene" uid="uid://ir6vs4437bvy" path="res://entities/InfoPoint.tscn" id="1_qlnm3"]
 [ext_resource type="PackedScene" uid="uid://dcho31xtwsft5" path="res://levels/level_leon_base.tscn" id="2_awh0u"]
 [ext_resource type="PackedScene" uid="uid://clopm85dp5m68" path="res://entities/Lever.tscn" id="3_126wy"]
 [ext_resource type="Script" path="res://scripts/appear.gd" id="5_s7851"]
@@ -11,18 +12,12 @@ size = Vector2(17, 28)
 
 [node name="LevelLeonAlice" type="Node2D"]
 
-[node name="JumpInfo" type="RichTextLabel" parent="."]
-offset_left = 411.0
-offset_top = -51.0
-offset_right = 434.0
-offset_bottom = -9.0
-theme_override_font_sizes/bold_italics_font_size = 5
-theme_override_font_sizes/italics_font_size = 5
-theme_override_font_sizes/mono_font_size = 5
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 0
-bbcode_enabled = true
-text = "i"
+[node name="TileMapBackground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAKAPf/CQARAAAAAAAKAPj/CQARAAIAAAAKAPv/CQASAAQAAAALAPb/CQARAAAAAAALAPf/CQASAAEAAAALAPj/CQASAAEAAAALAPn/CQARAAIAAAALAPv/CQATAAUAAAAMAPb/CQASAAAAAAAMAPf/CQASAAEAAAAMAPj/CQASAAEAAAAMAPn/CQARAAQAAAAMAPr/CQAQAAUAAAAMAPv/CQAQAAYAAAAMAPz/CQASAAYAAAAMAP3/CQAQAAUAAAAMAP7/CQARAAYAAAANAPb/CQATAAAAAAANAPf/CQASAAEAAAANAPj/CQASAAEAAAANAPn/CQATAAIAAAANAPz/CQATAAYAAAAOAPf/CQATAAAAAAAOAPj/CQATAAIAAAAOAP7/CQAIAAQAAAA=")
+tile_set = ExtResource("1_eeagu")
+
+[node name="JumpInfo" parent="." instance=ExtResource("1_qlnm3")]
+position = Vector2(405, -18)
 
 [node name="JumpText" parent="." instance=ExtResource("1_7bbhv")]
 position = Vector2(378, -72)
@@ -32,6 +27,7 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_jhh2o")
 
 [node name="JumpText" type="RichTextLabel" parent="JumpText"]
+modulate = Color(0, 0, 0, 1)
 offset_left = -36.0
 offset_top = -9.0
 offset_right = 208.0
@@ -41,18 +37,8 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Some objects are interactable
            with Return"
 
-[node name="CommunicationInfo" type="RichTextLabel" parent="."]
-offset_left = 1041.0
-offset_top = -96.0
-offset_right = 1064.0
-offset_bottom = -54.0
-theme_override_font_sizes/bold_italics_font_size = 5
-theme_override_font_sizes/italics_font_size = 5
-theme_override_font_sizes/mono_font_size = 5
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 0
-bbcode_enabled = true
-text = "i"
+[node name="CommunicationInfo" parent="." instance=ExtResource("1_qlnm3")]
+position = Vector2(1035, -54)
 
 [node name="JumpText2" parent="." instance=ExtResource("1_7bbhv")]
 position = Vector2(1008, -117)
@@ -62,6 +48,7 @@ position = Vector2(36, 36)
 shape = SubResource("RectangleShape2D_jhh2o")
 
 [node name="CommunicationText" type="RichTextLabel" parent="JumpText2"]
+modulate = Color(0, 0, 0, 1)
 offset_left = -36.0
 offset_top = -9.0
 offset_right = 208.0
@@ -73,8 +60,8 @@ Communication is Key"
 
 [node name="LevelLeonBase" parent="." instance=ExtResource("2_awh0u")]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAOAP7/CQAIAAQAAAAZAP7/CQAIAAQAAAAMAP7/CQARAAYAAAAMAP3/CQAQAAUAAAALAPv/CQARAAIAAAAMAPv/CQARAAQAAAANAPv/CQATAAIAAAANAPr/CQATAAEAAAAMAPr/CQASAAEAAAALAPr/CQARAAEAAAALAPn/CQARAAAAAAAMAPn/CQASAAAAAAANAPn/CQATAAAAAAAGAP3/CQAIAAQAAAAEAP3/CQADAAYAAAAEAPz/CQADAAYAAAAEAPv/CQADAAEAAAADAP3/CQACAAYAAAADAPz/CQAEAAUAAAADAPv/CQACAAEAAAACAPz/CQABAAYAAAACAPv/CQABAAEAAAACAP3/CQAFAAEAAAACAP7/CQAEAAUAAAAEAP7/CQAEAAEAAAADAP7/CQACAAYAAAAMAPz/CQAQAAQAAAA=")
+[node name="TileMapForeground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAZAP7/CQAIAAQAAAAGAP3/CQAIAAQAAAAEAP3/CQADAAYAAAAEAPz/CQADAAYAAAAEAPv/CQADAAEAAAADAP3/CQACAAYAAAADAPz/CQAEAAUAAAADAPv/CQACAAEAAAACAPz/CQABAAYAAAACAPv/CQABAAEAAAACAP3/CQAFAAEAAAACAP7/CQAEAAUAAAAEAP7/CQAEAAEAAAADAP7/CQACAAYAAABWAPT/CQAIAAIAAABXAPT/CQAJAAIAAABYAPT/CQAKAAIAAAANAPz/CQATAAYAAABIAPj/CQAIAAIAAABJAPj/CQAJAAIAAABKAPj/CQAKAAIAAAA=")
 tile_set = ExtResource("1_eeagu")
 
 [node name="Lever" parent="." instance=ExtResource("3_126wy")]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf784y71ar6lm"]
+
+[ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="1_lae17"]
+[ext_resource type="PackedScene" uid="uid://bop7cpqaios2b" path="res://levels/levels_v2/level_v2_start_base.tscn" id="2_v47xk"]
+[ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="3_huke3"]
+
+[node name="LevelsV2StartAlice" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 65, 0, 3, 0, 9, 0, 15, 0, 5, 0, 0, 0, 65, 0, 2, 0, 9, 0, 15, 0, 4, 0, 0, 0)
+tile_set = ExtResource("1_lae17")
+
+[node name="LevelV2StartBase" parent="." instance=ExtResource("2_v47xk")]
+
+[node name="ExitPipeText" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1102.0
+offset_top = -2.0
+offset_right = 1364.0
+offset_bottom = 67.0
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 12
+text = "As everbody knows, you 
+enter pipes with G"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player1" parent="." instance=ExtResource("3_huke3")]
