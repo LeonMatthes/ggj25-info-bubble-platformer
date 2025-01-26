@@ -9,7 +9,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	self.visible = true
+	if body.is_in_group("players"):
+		self.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
-	self.visible = false
+	if body.is_in_group("players"):
+		self.visible = false
