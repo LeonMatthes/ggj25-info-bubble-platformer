@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://bop7cpqaios2b"]
+[gd_scene load_steps=5 format=4 uid="uid://bop7cpqaios2b"]
 
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="1_142xs"]
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="2_o6q3c"]
 [ext_resource type="PackedScene" path="res://entities/level_end_trigger.tscn" id="3_pdgro"]
+[ext_resource type="PackedScene" path="res://entities/ambiance_background.tscn" id="4_sguy0"]
 
 [node name="LevelV2StartBase" type="Node2D"]
 
@@ -11,6 +12,7 @@ tile_map_data = PackedByteArray("AAAAAAgACQACAAYAAAABAAgACQACAAYAAAACAAgACQACAAY
 tile_set = ExtResource("2_o6q3c")
 
 [node name="MoveText" type="RichTextLabel" parent="TileMapLayer"]
+modulate = Color(0, 0, 0, 1)
 offset_left = 11.0
 offset_top = 74.0
 offset_right = 273.0
@@ -23,6 +25,7 @@ text = "Use A and D to move left/right!"
 metadata/_edit_use_anchors_ = true
 
 [node name="PropagandaText01" type="RichTextLabel" parent="TileMapLayer"]
+modulate = Color(0, 0, 0, 1)
 offset_left = 841.0
 offset_top = 70.0
 offset_right = 1103.0
@@ -41,3 +44,5 @@ position = Vector2(88, 124)
 position = Vector2(1182, 33)
 next_level_alice = "res://levels/levels_vs/level_v2_Pipe.tscn"
 next_level_bob = "res://levels/levels_vs/level_v2_Flag"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_sguy0")]
