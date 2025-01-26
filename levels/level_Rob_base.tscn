@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dgartf8xrstb3"]
+[gd_scene load_steps=6 format=4 uid="uid://dgartf8xrstb3"]
 
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="1_xnyn6"]
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="2_pvuuo"]
+[ext_resource type="PackedScene" uid="uid://cmbn52pygl5ko" path="res://entities/ambiance_background.tscn" id="3_b8lo8"]
 [ext_resource type="PackedScene" uid="uid://cbore88oru4et" path="res://entities/level_end_trigger.tscn" id="3_cfxh7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mut4"]
@@ -129,6 +130,8 @@ scale = Vector2(4.96002, 0.28)
 position = Vector2(0.201614, 3.21423)
 shape = SubResource("RectangleShape2D_5mut4")
 one_way_collision = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_b8lo8")]
 
 [node name="level_end_trigger" parent="." instance=ExtResource("3_cfxh7")]
 position = Vector2(-172, -1140)
