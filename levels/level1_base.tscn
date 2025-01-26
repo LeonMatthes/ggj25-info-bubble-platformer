@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=4 uid="uid://dsnc6rw2c6g1h"]
+[gd_scene load_steps=5 format=4 uid="uid://dsnc6rw2c6g1h"]
 
 [ext_resource type="PackedScene" uid="uid://csej6qd7uugvb" path="res://entities/Player.tscn" id="1_12buo"]
+[ext_resource type="PackedScene" uid="uid://cmbn52pygl5ko" path="res://entities/ambiance_background.tscn" id="1_s2avm"]
 [ext_resource type="TileSet" uid="uid://cpo43stj3v32h" path="res://tiles asset packs/MainTileSet.tres" id="2_qamax"]
 [ext_resource type="PackedScene" uid="uid://cbore88oru4et" path="res://entities/level_end_trigger.tscn" id="3_2s7oj"]
 
 [node name="Level1Base" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_s2avm")]
+offset = Vector2(0, 103.9)
+transform = Transform2D(1, 0, 0, 1, 0, 103.9)
 
 [node name="Player" parent="." instance=ExtResource("1_12buo")]
 position = Vector2(88, 124)
@@ -14,6 +19,7 @@ tile_map_data = PackedByteArray("AAAAAAgACQACAAYAAAABAAgACQACAAYAAAACAAgACQACAAY
 tile_set = ExtResource("2_qamax")
 
 [node name="MoveText" type="RichTextLabel" parent="TileMapLayer"]
+modulate = Color(0, 0, 0, 1)
 offset_left = 11.0
 offset_top = 74.0
 offset_right = 273.0
