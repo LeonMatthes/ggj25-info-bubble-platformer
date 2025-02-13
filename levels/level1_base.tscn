@@ -34,3 +34,5 @@ text = "Use A and D to move left/right!"
 position = Vector2(1101, 9)
 next_level_alice = "res://levels/level_leon_Alice.tscn"
 next_level_bob = "res://levels/level_leon_Bob.tscn"
+key_alice = 88
+key_bob = 74

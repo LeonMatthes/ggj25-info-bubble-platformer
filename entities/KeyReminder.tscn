@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://75rksxvroqhk"]
+
+[ext_resource type="Script" path="res://scripts/key_reminder.gd" id="1_2d3gv"]
+
+[node name="KeyReminder" type="Label"]
+modulate = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+text = "Remember: [other]
+continues with [key]"
+horizontal_alignment = 1
+script = ExtResource("1_2d3gv")

@@ -63,7 +63,7 @@ offset_right = 187.0
 offset_bottom = 18.0
 scale = Vector2(0.811709, 0.808988)
 theme_override_font_sizes/normal_font_size = 12
-text = "Press Enter to interact with the flag!"
+text = "Ask for help to finish the level"
 
 [connection signal="body_exited" from="Player2View/JumpText" to="Player2View/JumpText" method="_on_body_exited"]
 [connection signal="body_exited" from="Player2View/EndText" to="Player2View/EndText" method="_on_body_exited"]

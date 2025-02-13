@@ -16,27 +16,6 @@ size = Vector2(17, 28)
 tile_map_data = PackedByteArray("AAAKAPf/CQARAAAAAAAKAPj/CQARAAIAAAAKAPv/CQASAAQAAAALAPb/CQARAAAAAAALAPf/CQASAAEAAAALAPj/CQASAAEAAAALAPn/CQARAAIAAAALAPv/CQATAAUAAAAMAPb/CQASAAAAAAAMAPf/CQASAAEAAAAMAPj/CQASAAEAAAAMAPn/CQARAAQAAAAMAPr/CQAQAAUAAAAMAPv/CQAQAAYAAAAMAPz/CQASAAYAAAAMAP3/CQAQAAUAAAAMAP7/CQARAAYAAAANAPb/CQATAAAAAAANAPf/CQASAAEAAAANAPj/CQASAAEAAAANAPn/CQATAAIAAAANAPz/CQATAAYAAAAOAPf/CQATAAAAAAAOAPj/CQATAAIAAAAOAP7/CQAIAAQAAAA=")
 tile_set = ExtResource("1_eeagu")
 
-[node name="JumpInfo" parent="." instance=ExtResource("1_qlnm3")]
-position = Vector2(405, -18)
-
-[node name="JumpText" parent="." instance=ExtResource("1_7bbhv")]
-position = Vector2(378, -72)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpText"]
-position = Vector2(36, 36)
-shape = SubResource("RectangleShape2D_jhh2o")
-
-[node name="JumpText" type="RichTextLabel" parent="JumpText"]
-modulate = Color(0, 0, 0, 1)
-offset_left = -36.0
-offset_top = -9.0
-offset_right = 208.0
-offset_bottom = 29.0
-scale = Vector2(0.811709, 0.808988)
-theme_override_font_sizes/normal_font_size = 12
-text = "Some objects are interactable
-           with Return"
-
 [node name="CommunicationInfo" parent="." instance=ExtResource("1_qlnm3")]
 position = Vector2(1035, -54)
 
@@ -61,7 +40,7 @@ Communication is Key"
 [node name="LevelLeonBase" parent="." instance=ExtResource("2_awh0u")]
 
 [node name="TileMapForeground" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAZAP7/CQAIAAQAAAAGAP3/CQAIAAQAAAAEAP3/CQADAAYAAAAEAPz/CQADAAYAAAAEAPv/CQADAAEAAAADAP3/CQACAAYAAAADAPz/CQAEAAUAAAADAPv/CQACAAEAAAACAPz/CQABAAYAAAACAPv/CQABAAEAAAACAP3/CQAFAAEAAAACAP7/CQAEAAUAAAAEAP7/CQAEAAEAAAADAP7/CQACAAYAAABWAPT/CQAIAAIAAABXAPT/CQAJAAIAAABYAPT/CQAKAAIAAAANAPz/CQATAAYAAABIAPj/CQAIAAIAAABJAPj/CQAJAAIAAABKAPj/CQAKAAIAAAA=")
+tile_map_data = PackedByteArray("AAAZAP7/CQAHAAQAAABWAPT/CQAIAAIAAABXAPT/CQAJAAIAAABYAPT/CQAKAAIAAAANAPz/CQATAAYAAABIAPj/CQAIAAIAAABJAPj/CQAJAAIAAABKAPj/CQAKAAIAAAAEAPz/CQADAAEAAAADAPz/CQACAAEAAAACAPz/CQABAAEAAAAEAP3/CQADAAYAAAADAP3/CQACAAYAAAACAP3/CQAFAAEAAAACAP7/CQAEAAUAAAADAP7/CQACAAYAAAAEAP7/CQAEAAEAAAA=")
 tile_set = ExtResource("1_eeagu")
 
 [node name="Lever" parent="." instance=ExtResource("3_126wy")]
@@ -72,6 +51,5 @@ tile_map_data = PackedByteArray("AAAvAP3/CQAIAAIAAAAwAP3/CQAJAAIAAAAxAP3/CQAKAAI
 tile_set = ExtResource("1_eeagu")
 script = ExtResource("5_s7851")
 
-[connection signal="body_exited" from="JumpText" to="JumpText" method="_on_body_exited"]
 [connection signal="body_exited" from="JumpText2" to="JumpText2" method="_on_body_exited"]
 [connection signal="lever_activated" from="Lever" to="Platform" method="appear"]
